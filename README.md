@@ -15,9 +15,9 @@ Before using this script, you need to have the following installed:
 1. Edit the `downloader.bat` file and update the following paths to match your system:
 
 ```batch
-set "ytDlp=C:\Users\joao3\Videos\yt-dlp-master"     :: Path where yt-dlp.exe is located
-set "cookies=C:\Users\joao3\Videos\yt-dlp-master"   :: Path where chrome cookie file is located
-set "saveLocation=C:\Users\joao3\Videos"            :: Path where videos will be saved
+set "ytDlp=C:\Users\username\Videos\yt-dlp-master"     :: Path where yt-dlp.exe is located
+set "cookies=C:\Users\username\Videos\yt-dlp-master"   :: Path where chrome cookie file is located
+set "saveLocation=C:\Users\username\Videos"            :: Path where videos will be saved
 set "ffmpeg=C:\ffmpeg"                               :: Path where ffmpeg is installed (binaries in bin subfolder)
 ```
 
