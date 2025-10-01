@@ -15,9 +15,9 @@ echo ================================
 echo  YouTube Downloader Script
 echo ================================
 echo.
-set /p argument2="Enter argument2 (video URL): "
-set /p argument1="Enter argument1 (file name): "
-set /p argument3="Enter argument3 (optional Referer URL, press Enter to skip): "
+set /p videoUrl="Enter video URL: "
+set /p fileName="Enter file name (optional, press Enter to use video title): "
+set /p refererUrl="Enter Referer URL (optional, press Enter to skip): "
 
 
 :: Set paths from environment variables or manually
@@ -27,15 +27,15 @@ set "saveLocation=C:\Users\joao3\Videos"
 set "ffmpeg=C:\ffmpeg"
 
 :: Set output filename template
-if "%argument1%"=="" (
+if "%fileName%"=="" (
     set "outputTemplate=%saveLocation%\%%(title)s.%%(ext)s"
 ) else (
-    set "outputTemplate=%saveLocation%\%argument1%.%%(ext)s" 
+    set "outputTemplate=%saveLocation%\%fileName%.%%(ext)s" 
 )
 
 
-:: Check if argument2 is empty (required field)
-if "%argument2%"=="" (
+:: Check if videoUrl is empty (required field)
+if "%videoUrl%"=="" (
     echo.
     echo ERROR: Video URL is required!
     echo Press any key to retry...
@@ -44,13 +44,13 @@ if "%argument2%"=="" (
 )
 
 
-:: Check if argument3 is provided
-if "%argument3%"=="" (
+:: Check if refererUrl is provided
+if "%refererUrl%"=="" (
     echo Running first download command...
-    "%ytDlp%\yt-dlp.exe" --newline -i --all-subs -o "!outputTemplate!" --ignore-config --hls-prefer-native -f bestvideo+bestaudio/b --cookies "%cookies%\chrome" --buffer-size 16k --no-warning --remux-video mp4 --audio-multistreams --sub-langs all --ffmpeg-location "%ffmpeg%\bin" "%argument2%"
+    "%ytDlp%\yt-dlp.exe" --newline -i --all-subs -o "!outputTemplate!" --ignore-config --hls-prefer-native -f bestvideo+bestaudio/b --cookies "%cookies%\chrome" --buffer-size 16k --no-warning --remux-video mp4 --audio-multistreams --sub-langs all --ffmpeg-location "%ffmpeg%\bin" "%videoUrl%"
 ) else (
     echo Running second download command...
-    "%ytDlp%\yt-dlp.exe" -o "!outputTemplate!" --add-header "Referer: %argument3%" --add-header "Origin: %argument3%" --add-header "User-Agent: Mozila/5.0" "%argument2%"
+    "%ytDlp%\yt-dlp.exe" -o "!outputTemplate!" --add-header "Referer: %refererUrl%" --add-header "Origin: %refererUrl%" --add-header "User-Agent: Mozila/5.0" "%videoUrl%"
 )
 
 echo.
