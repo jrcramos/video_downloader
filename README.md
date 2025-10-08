@@ -1,6 +1,6 @@
 # Video Downloader
 
-A Windows batch script that uses yt-dlp to download videos from YouTube and other supported platforms.
+A Windows batch script that uses yt-dlp to download videos from provided a m3u or diretcly from an website link.
 
 ## Prerequisites
 
