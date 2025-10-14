@@ -1,6 +1,8 @@
 # Video Downloader
 
-A Windows batch script that uses yt-dlp to download videos from provided a m3u or diretcly from an website link.
+A Windows batch script that uses yt-dlp to download videos from an M3U playlist or directly from a website link.
+
+![Workflow](images/workflow.png)
 
 ## Prerequisites
 
@@ -10,7 +12,17 @@ Before using this script, you need to have the following installed:
 2. **ffmpeg**: Download from [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
    - Extract ffmpeg to `C:\ffmpeg` so binaries are in `C:\ffmpeg\bin`
 
+![Setup Steps](images/setup_steps.png)
+
 ## Setup
+
+### Folder Structure
+
+The following folder structure is recommended:
+
+![Folder Structure](images/folder_structure.png)
+
+### Configuration
 
 1. Edit the `downloader.bat` file and update the following paths to match your system:
 
@@ -32,6 +44,10 @@ set "ffmpeg=C:\ffmpeg"                               :: Path where ffmpeg is ins
    - **Video URL** (required): The URL of the video you want to download
    - **File name** (optional): Custom name for the output file. Press Enter to use the video's original title
    - **Referer URL** (optional): Only needed for some sites that require a referer header. Press Enter to skip
+
+### Script Interface
+
+![Script Interface](images/script_interface.png)
 
 ### Example
 
