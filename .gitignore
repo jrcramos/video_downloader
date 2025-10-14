@@ -1,0 +1,29 @@
+# Downloaded videos (don't commit user's downloaded content)
+*.mp4
+*.mkv
+*.avi
+*.webm
+*.flv
+
+# Subtitles
+*.srt
+*.vtt
+*.ass
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
