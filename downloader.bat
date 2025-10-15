@@ -21,9 +21,9 @@ set /p refererUrl="Enter Referer URL (optional, press Enter to skip): "
 
 
 :: Set paths from environment variables or manually
-set "ytDlp=C:\Users\joao3\Videos\yt-dlp-master"
-set "cookies=C:\Users\joao3\Videos\yt-dlp-master"
-set "saveLocation=C:\Users\joao3\Videos"
+set "ytDlp=C:\Users\username\Videos\yt-dlp-master"
+set "cookies=C:\Users\username\Videos\yt-dlp-master"
+set "saveLocation=C:\Users\username\Videos"
 set "ffmpeg=C:\ffmpeg"
 
 :: Set output filename template
@@ -58,5 +58,6 @@ echo Download process completed.
 echo Press any key to download another video...
 :: pause >nul
 goto input_loop
+
 
 
