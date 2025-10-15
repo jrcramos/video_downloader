@@ -21,9 +21,9 @@ set /p refererUrl="Enter Referer URL (optional, press Enter to skip): "
 
 
 :: Set paths from environment variables or manually
-set "ytDlp=C:\Users\username\Videos\yt-dlp-master"
-set "cookies=C:\Users\username\Videos\yt-dlp-master"
-set "saveLocation=C:\Users\username\Videos"
+set "ytDlp=C:\Users\joao3\Videos\yt-dlp-master"
+set "cookies=C:\Users\joao3\Videos\yt-dlp-master"
+set "saveLocation=C:\Users\joao3\Videos"
 set "ffmpeg=C:\ffmpeg"
 
 :: Set output filename template
@@ -50,7 +50,7 @@ if "%refererUrl%"=="" (
     "%ytDlp%\yt-dlp.exe" --newline -i --all-subs -o "!outputTemplate!" --ignore-config --hls-prefer-native -f bestvideo+bestaudio/b --cookies "%cookies%\chrome" --buffer-size 16k --no-warning --remux-video mp4 --audio-multistreams --sub-langs all --ffmpeg-location "%ffmpeg%\bin" "%videoUrl%"
 ) else (
     echo Running second download command...
-    "%ytDlp%\yt-dlp.exe" -o "!outputTemplate!" --add-header "Referer: %refererUrl%" --add-header "Origin: %refererUrl%" --add-header "User-Agent: Mozila/5.0" "%videoUrl%"
+    "%ytDlp%\yt-dlp.exe" -o "!outputTemplate!" --add-header "Referer: %refererUrl%" --add-header "Origin: %refererUrl%" --add-header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" "%videoUrl%"
 )
 
 echo.
